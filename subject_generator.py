@@ -7,7 +7,7 @@ names=["Mike","James","May","Steve","Peter","Mary","George",
 surnames=["Lee","Wong","Ng","Chan","Ho",
           "Cheng","Tze","Kwok","Hong","Yuen"]
 
-x1=[None,"economics_1","geography_1","chemistry_1","physics_1"]
+x1=["None","economics_1","geography_1","chemistry_1","physics_1"]
 
 x2=["bafs","biology_2","chistory","economics_2","ict","physics_2"]
 
