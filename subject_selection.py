@@ -23,7 +23,7 @@ with open("/home/aerobucket/python/testing/subject.csv") as subject:
     
 
     subject_column=["x1","x2","x3"]
-    pref_column=["pref1","pref2","pref3","pref4","pref5","pref6"]
+    preference_column=["preference1","preference2","preference3","preference4","preference5","preference6"]
     run_times=len(average)
 
     # execute for every person
@@ -47,8 +47,8 @@ with open("/home/aerobucket/python/testing/subject.csv") as subject:
                         classes[sub].append(name)  
                     
                     else:
-                        for pref in pref_column:
-                            sub_1=row[pref]
+                        for preference in preference_column:
+                            sub_1=row[preference]
                             
                             if len(classes[sub_1]) < 3 :
                                 classes[sub_1].append(name)
