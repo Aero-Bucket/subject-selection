@@ -35,14 +35,18 @@ subject_reference={"x1":x1,
                     "x3":x3,
                     }
 
+
 with open("/home/aerobucket/python/testing/random_subject.csv") as subject:
     csvreader=list(csv.DictReader(subject,delimiter=","))
     
     name_to_score={}
     average=[]
+    name_list=[]
+
     for row in csvreader:
         name_to_score[float(row["average"])]=row["name"]
         average.append(float(row["average"]))
+        name_list.append(row["name"])
    
     run_times=len(average)
 
@@ -76,4 +80,43 @@ with open("/home/aerobucket/python/testing/random_subject.csv") as subject:
 
         average.remove(max_score)
         
-print(x1)
+
+results_header=["name","x1","x2","x3"]
+
+
+with open("results.csv","w") as results:
+    result_writer=csv.DictWriter(results,fieldnames=results_header)
+    result_writer.writeheader()
+    
+    for n in name_list:
+        
+        row_dict={"name":n,}
+        
+        for elective_name,elective in subject_reference.items():
+            
+            for subject_name,subject in elective.items():
+                
+                if n in subject:
+                    row_dict[elective_name]=subject_name
+                
+        result_writer.writerow(row_dict)
+                    
+                
+                
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
