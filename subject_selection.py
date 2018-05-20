@@ -49,6 +49,7 @@ with open("/home/aerobucket/python/testing/random_subject.csv") as subject:
         name_list.append(row["name"])
    
     run_times=len(average)
+    class_size=35
 
     # execute for every person
     for i in range(run_times):
@@ -66,7 +67,7 @@ with open("/home/aerobucket/python/testing/random_subject.csv") as subject:
                     subj=row[elective]
                     
                     # check for people in the class
-                    if len(subject_reference[elective][subj]) < 28:
+                    if len(subject_reference[elective][subj]) < class_size:
                         subject_reference[elective][subj].append(name)  
                     
                     else:
@@ -74,7 +75,7 @@ with open("/home/aerobucket/python/testing/random_subject.csv") as subject:
                             subj_1=row[preference]
                             
                             if subj_1 in subject_reference[elective].keys() == True:
-                                if len(subject_reference[elective][subj_1]) < 28:
+                                if len(subject_reference[elective][subj_1]) < class_size:
                                     subject_reference[elective][subj_1].append(name)
                                     break 
 
