@@ -21,7 +21,7 @@ fields=["name","average","x1","x2","x3",
         "pref7","pref8","pref9","pref10","pref11","pref12"]
 
 prefs_field=["pref1","pref2","pref3","pref4","pref5","pref6",
-        "pref7","pref8","pref9","pref10","pref11","pref12"]
+             "pref7","pref8","pref9","pref10","pref11","pref12"]
 
 electives_field=["x1","x2","x3"]
 
@@ -48,9 +48,6 @@ with open("random_subject.csv","w") as rsub:
                 
             csv_dict={"name":f"{n} {s}",
                       "average":round(random.uniform(0,100),2),
-                      "x1":random.choice(x1),
-                      "x2":random.choice(x2),
-                      "x3":random.choice(x3),
                      }
             csv_dict.update(pref_dict)
             csv_dict.update(elective_dict)
